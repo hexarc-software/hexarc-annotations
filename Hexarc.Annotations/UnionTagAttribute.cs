@@ -1,13 +1,12 @@
-﻿using System;
+﻿namespace Hexarc.Annotations;
 
-namespace Hexarc.Annotations
+using System;
+
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class UnionTagAttribute : Attribute
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public sealed class UnionTagAttribute : Attribute
-    {
-        public String TagPropertyName { get; }
+    public String TagPropertyName { get; }
 
-        public UnionTagAttribute(String tagPropertyName) =>
-            this.TagPropertyName = tagPropertyName;
-    }
+    public UnionTagAttribute(String tagPropertyName) =>
+        this.TagPropertyName = tagPropertyName;
 }
